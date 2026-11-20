@@ -1,0 +1,21 @@
+name: GitOps Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Apply Job
+        run: |
+          echo "Applying infrastructure changes..."
+          echo "Done"
